@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
 
-BASE = '/home/ulrich/Documents/master2/projects/projet_covid/data/27-08_2020/'
+BASE = './data/27-08_2020/'
 AGGREG=BASE+'/aggreg/'
 OUTPUT = AGGREG+"agg_data_per_days.csv"
 INPUT = BASE+'donnees-hospitalieres-nouveaux-covid19-2020-08-27-19h00.csv'
