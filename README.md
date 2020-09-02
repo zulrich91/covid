@@ -15,3 +15,10 @@
 # Host project
 * The instructions on how to host the application are available [here](https://dash.plotly.com/deployment) on heroku 
 
+# Data Sources
+* [Santé Publique France: Hospital data](https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)
+* [Santé Publique France: GEODES (Geo Donnees en Sante Publique)](https://geodes.santepubliquefrance.fr/#c=indicator&view=map2)
+* [Corona Virus Statistiques](https://www.coronavirus-statistiques.com/open-data/?fbclid=IwAR0Mn7mZqd1zh3Dz54wL8CViwDSJDSHSkiU1lxwxr2dRvVQCkIme49WVZdc)
+* [Google Mobility](https://www.google.com/covid19/mobility/)
+* [Code mapping of regions of France](https://www.data.gouv.fr/fr/datasets/departements-de-france/?fbclid=IwAR3en1smTJleFB63SBcOZaZ_-KSMm__IR0DjCvrlA5qrnDpoMulyz8OvNCs#_)
+* [Donnees Estimation de la population de la population francaise au 1ᵉʳ janvier 2020](https://www.insee.fr/fr/statistiques/1893198)
