@@ -1,0 +1,20 @@
+code,region,hygene
+01,Guadeloupe,
+02,Martinique,
+03,Guyane,
+04,La Réunion,
+06,Mayotte,
+11,Île-de-France,2.7
+24,Centre-Val de Loire,2.6
+27,Bourgogne-Franche-Comté,2.9
+28,Normandie,2.8
+32,Hauts-de-France,2.7
+44,Grand Est,2.6
+52,Pays de la Loire,2.5
+53,Bretagne,2.7
+75,Nouvelle-Aquitaine,2.5
+76,Occitanie,2.6
+84,Auvergne-Rhône-Alpes,2.8
+93,Provence-Alpes-Côte d'Azur,2.6
+94,Corse,
+ZZ,Collectivités d'outre-mer,

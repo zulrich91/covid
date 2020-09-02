@@ -1,0 +1,20 @@
+code,region,depression
+01,Guadeloupe,
+02,Martinique,
+03,Guyane,
+04,La Réunion,
+06,Mayotte,
+11,Île-de-France,15.2
+24,Centre-Val de Loire,10.9
+27,Bourgogne-Franche-Comté,10.4
+28,Normandie,16.7
+32,Hauts-de-France,14.1
+44,Grand Est,12.1
+52,Pays de la Loire,9.1
+53,Bretagne,7.8
+75,Nouvelle-Aquitaine,11.4
+76,Occitanie,13.9
+84,Auvergne-Rhône-Alpes,9.4
+93,Provence-Alpes-Côte d'Azur,11.3
+94,Corse,
+ZZ,Collectivités d'outre-mer,

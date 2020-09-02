@@ -1,0 +1,20 @@
+code,region,adoption_hygene
+01,Guadeloupe,
+02,Martinique,
+03,Guyane,
+04,La Réunion,
+06,Mayotte,
+11,Île-de-France,47.1
+24,Centre-Val de Loire,50.3
+27,Bourgogne-Franche-Comté,45.1
+28,Normandie,50.7
+32,Hauts-de-France,44.4
+44,Grand Est,42.8
+52,Pays de la Loire,41.3
+53,Bretagne,44.0
+75,Nouvelle-Aquitaine,45.8
+76,Occitanie,54.7
+84,Auvergne-Rhône-Alpes,41.4
+93,Provence-Alpes-Côte d'Azur,55.9
+94,Corse,
+ZZ,Collectivités d'outre-mer,

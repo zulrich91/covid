@@ -1,0 +1,20 @@
+code,region,anxiety
+01,Guadeloupe,
+02,Martinique,
+03,Guyane,
+04,La Réunion,
+06,Mayotte,
+11,Île-de-France,16.7
+24,Centre-Val de Loire,16.1
+27,Bourgogne-Franche-Comté,18.9
+28,Normandie,14.9
+32,Hauts-de-France,24.9
+44,Grand Est,24.9
+52,Pays de la Loire,20.5
+53,Bretagne,15.3
+75,Nouvelle-Aquitaine,17.2
+76,Occitanie,19.3
+84,Auvergne-Rhône-Alpes,20.5
+93,Provence-Alpes-Côte d'Azur,14.6
+94,Corse,
+ZZ,Collectivités d'outre-mer,

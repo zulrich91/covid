@@ -1,0 +1,20 @@
+code,region,depression,iso
+1,Guadeloupe,,FR-GUA
+2,Martinique,,FR-MAR
+3,Guyane,,FR-GUY
+4,La Réunion,,FR-LRE
+6,Mayotte,,FR-MAY
+11,Île-de-France,21.3,FR-IDF
+24,Centre-Val de Loire,12.8,FR-CVL
+27,Bourgogne-Franche-Comté,22.3,FR-BFC
+28,Normandie,25.8,FR-NOR
+32,Hauts-de-France,15.6,FR-HDF
+44,Grand Est,23.5,FR-GES
+52,Pays de la Loire,16.4,FR-PDL
+53,Bretagne,18.3,FR-BRE
+75,Nouvelle-Aquitaine,14.2,FR-NAQ
+76,Occitanie,22.8,FR-OCC
+84,Auvergne-Rhône-Alpes,18.1,FR-ARA
+93,Provence-Alpes-Côte d'Azur,18.3,FR-PAC
+94,Corse,,FR-COR
+ZZ,Collectivités d'outre-mer,,

@@ -1,0 +1,20 @@
+code,region,pb_sommeil
+01,Guadeloupe,
+02,Martinique,
+03,Guyane,
+04,La Réunion,
+06,Mayotte,
+11,Île-de-France,64.9
+24,Centre-Val de Loire,71.2
+27,Bourgogne-Franche-Comté,63.8
+28,Normandie,64.1
+32,Hauts-de-France,69.1
+44,Grand Est,65.4
+52,Pays de la Loire,58.8
+53,Bretagne,54.7
+75,Nouvelle-Aquitaine,60.5
+76,Occitanie,66.1
+84,Auvergne-Rhône-Alpes,65.7
+93,Provence-Alpes-Côte d'Azur,65.8
+94,Corse,
+ZZ,Collectivités d'outre-mer,

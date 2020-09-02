@@ -1,0 +1,20 @@
+code,region,masks
+01,Guadeloupe,
+02,Martinique,
+03,Guyane,
+04,La Réunion,
+06,Mayotte,
+11,Île-de-France,58.4
+24,Centre-Val de Loire,47.9
+27,Bourgogne-Franche-Comté,43.8
+28,Normandie,52.7
+32,Hauts-de-France,51.4
+44,Grand Est,48.8
+52,Pays de la Loire,47.9
+53,Bretagne,36.6
+75,Nouvelle-Aquitaine,47.9
+76,Occitanie,49.4
+84,Auvergne-Rhône-Alpes,49.9
+93,Provence-Alpes-Côte d'Azur,39.9
+94,Corse,
+ZZ,Collectivités d'outre-mer,
