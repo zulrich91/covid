@@ -9,7 +9,7 @@
 * **`sir_per_day.py`**: Script to preprocess data and extract a SIR model ready dataset. 
 * **`corona.py`** : Script to extract France's aggregated hospital data form the datasets of [Corona Virus Statistique](https://www.coronavirus-statistiques.com/open-data/?fbclid=IwAR0Mn7mZqd1zh3Dz54wL8CViwDSJDSHSkiU1lxwxr2dRvVQCkIme49WVZdc).
 * **`requirements.txt`**: Packages required to run the dashboard.
-* **`Ulrich TCHUENKAM_ Covid Project (2).pdf`**: Project report. 
+* [**`Ulrich TCHUENKAM_ Covid Project (2).pdf`**](https://github.com/zulrich91/covid/blob/master/Ulrich%20TCHUENKAM_%20Covid%20Project%20(2).pdf): Project report. 
 
 # Host project
 * This dash application is hosted [here]( https://covid-tchuenkam.herokuapp.com/)
