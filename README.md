@@ -1,7 +1,6 @@
-# covid
+# COVID-19 Project
 * The code base of the Covid project at ILIS 
-* The dash application is hosted at URL https://covid-tchuenkam.herokuapp.com/
-* `agg_per_day.py`: Script to aggregate the data on daily basis.
+* **`agg_per_day.py`**: Script to aggregate the data on daily basis.
 * `agg_per_reg.py`: Script to aggregate the data at the regional level. 
 * `app.py`: Script running the dashboard.
 * `clean_preval.py`: Script to clean the dataset of indicators.
@@ -13,7 +12,8 @@
 * `Ulrich TCHUENKAM_ Covid Project (2).pdf`: Project report. 
 
 # Host project
-* The instructions on how to host the application are available [here](https://dash.plotly.com/deployment) on heroku 
+* This dash application is hosted [here]( https://covid-tchuenkam.herokuapp.com/)
+* The instructions on how to host an application on heroku are available [here](https://dash.plotly.com/deployment).
 
 # Data Sources
 * [Santé Publique France: Hospital data](https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/)
