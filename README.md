@@ -8,4 +8,6 @@
 * `flux.py`: Script to automatically download data from the various sources.
 * `google_mobility.py`: Script to preprocess google mobility to extract data about France. 
 * `sir_per_day.py`: Script to preprocess data and extract a SIR model ready dataset. 
+* `requirements.txt`: Packages required to run the dashboard.
 * `Ulrich TCHUENKAM_ Covid Project (2).pdf`: Project report. 
+
