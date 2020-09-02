@@ -11,10 +11,13 @@ import plotly.graph_objs as go
 from io import BytesIO
 import numpy as np
 from scipy.integrate import odeint
+from urllib.request import urlopen
+
 
 
 agg_day_df = pd.read_csv('./data/agg_data_per_days.csv')
 agg_reg = pd.read_csv('./data/agg_data_per_regions.csv',encoding='utf-8')
+corona_virus_df = pd.read_csv('./data/corona_virus.csv')
 geo_labels = ["Nombre cumulé de personnes décédées pour COVID-19 depuis le 1er mars 2020 - hommes et femmes",
               "Nombre de personnes actuellement hospitalisées pour COVID-19 - hommes et femmes",
               "Nombre quotidien de nouveaux retours à domicile pour COVID-19",
@@ -228,8 +231,8 @@ eval_fig.add_shape(
 eval_fig.add_trace(go.Scatter(
     x=[end_confinement, start_mask],
     y=[agg_day_df['incid_rad'].max(), agg_day_df['incid_rad'].max()],
-    text=["End of confinement and obligation of social distancing and hygienic measures",
-          "Start date of mask obligation plus social distancing and hygienic measures"],
+    text=["End of confinement",
+          "Start date of mask obligation"],
     mode="text",
     name='Events'
 ))
@@ -241,8 +244,8 @@ eval_fig.add_trace(go.Scatter(
     text=['DEATH \n',
             "Max : {}".format(df_mask['incid_dc'].max()),
             "Min : {}".format(df_mask['incid_dc'].min()),
-            "Mean : {}".format(round(df_mask['incid_dc'].mean(),2)),
-            "Total : {}".format(df_mask['incid_dc'].sum())],
+            "Mean:{}".format(round(df_mask['incid_dc'].mean(),2)),
+            "Total:{}".format(df_mask['incid_dc'].sum())],
     mode="text",
     name = "Death during mask obligation"
 
@@ -255,8 +258,8 @@ eval_fig.add_trace(go.Scatter(
     text=['Recovery \n',
             "Max : {}".format(df_mask['incid_rad'].max()),
             "Min : {}".format(df_mask['incid_rad'].min()),
-            "Mean : {}".format(round(df_mask['incid_rad'].mean(),2)),
-            "Total : {}".format(df_mask['incid_rad'].sum())],
+            "Mean:{}".format(round(df_mask['incid_rad'].mean(),2)),
+            "Total:{}".format(df_mask['incid_rad'].sum())],
     mode="text",
     name = "Recovery during mask obligation"
 
@@ -278,7 +281,7 @@ eval_fig.add_trace(go.Scatter(
 
 # Statistics of Recovery after confinement
 eval_fig.add_trace(go.Scatter(
-    x=["2020-06-12","2020-06-12","2020-06-12","2020-06-12","2020-06-12"],
+    x=["2020-07-2","2020-07-2","2020-07-2","2020-07-2","2020-07-2"],
     y=[2000, 1800, 1600, 1400, 1200],
     text=['Recovery \n',
             "Max : {}".format(df_decon['incid_rad'].max()),
@@ -292,12 +295,12 @@ eval_fig.add_trace(go.Scatter(
 
 # Statistics of Death during confinement
 eval_fig.add_trace(go.Scatter(
-    x=["2020-03-9","2020-03-9","2020-03-9","2020-03-9","2020-03-9"],
+    x=["2020-03-02","2020-03-02","2020-03-02","2020-03-02","2020-03-02"],
     y=[2000, 1800, 1600, 1400, 1200],
     text=['DEATH \n',
             "Max : {}".format(df_conf['incid_dc'].max()),
             "Min : {}".format(df_conf['incid_dc'].min()),
-            "Mean : {}".format(round(df_conf['incid_dc'].mean(),2)),
+            "Mean:{}".format(round(df_conf['incid_dc'].mean(),2)),
             "Total : {}".format(df_conf['incid_dc'].sum())],
     mode="text",
     name='Death during confinement'
@@ -306,12 +309,12 @@ eval_fig.add_trace(go.Scatter(
 
 # Statistics of Recovery during confinement
 eval_fig.add_trace(go.Scatter(
-    x=["2020-03-23","2020-03-23","2020-03-23","2020-03-23","2020-03-23"],
+    x=["2020-03-19","2020-03-19","2020-03-19","2020-03-19","2020-03-19"],
     y=[2000, 1800, 1600, 1400, 1200],
     text=['Recovery \n',
             "Max : {}".format(df_conf['incid_rad'].max()),
             "Min : {}".format(df_conf['incid_rad'].min()),
-            "Mean : {}".format(round(df_conf['incid_rad'].mean(),2)),
+            "Mean:{}".format(round(df_conf['incid_rad'].mean(),2)),
             "Total : {}".format(df_conf['incid_rad'].sum())],
     mode="text",
     name='Recovery during confinement'
@@ -321,6 +324,72 @@ eval_fig.update_layout(
             title='COVID-19 Death/ Recovery daily count between {} and {} '.format(agg_day_df['jour'].min(), agg_day_df['jour'].max()),
             xaxis_title='Day',
             yaxis_title='Number of people')
+
+### Google Data Mobility data
+mobility_fig = go.Figure()
+mobility_df = pd.read_csv('./data/mobility.csv')
+mobility_fig.add_trace(go.Scatter(
+    x=[end_confinement, start_mask],
+    y=[100, 100],
+    text=["End of confinement",
+          "Start date of mask obligation"],
+    mode="text",
+    name='Events'
+))
+mobility_fig.add_shape(
+        # Line Vertical
+        dict(
+            type="line",
+            x0=start_mask, # Start date of mask obligation
+            y0=-100,
+            x1=start_mask,
+            y1=100,
+            line=dict(color="black",
+                      width=3)))
+mobility_fig.add_shape(
+        # Line Vertical
+        dict(
+            type="line",
+            x0=end_confinement, # End of confinement
+            y0=-100,
+            x1=end_confinement,
+            y1=100,
+            line=dict(color="black",
+                      width=3)))
+mobility_fig.add_trace(go.Scatter(x=mobility_df[mobility_df.columns[0]],
+                            y=mobility_df[mobility_df.columns[1]],
+                            line_color="#FF0000",
+                            name="Commerce et loisirs",
+                            ))
+mobility_fig.add_trace(go.Scatter(x=mobility_df[mobility_df.columns[0]],
+                            y=mobility_df[mobility_df.columns[2]],
+                            line_color="#D2691E",
+                            name="Alimentation et Pharmacie",
+                            ))
+mobility_fig.add_trace(go.Scatter(x=mobility_df[mobility_df.columns[0]],
+                            y=mobility_df[mobility_df.columns[3]],
+                            line_color="#0000FF",
+                            name="Parcs"
+                            ))
+# mobility_fig.add_trace(go.Scatter(x=mobility_df[mobility_df.columns[0]],
+#                             y=mobility_df[mobility_df.columns[4]],
+#                             line_color="#800000",
+#                             name=mobility_df.columns[4],
+#                             ))
+mobility_fig.add_trace(go.Scatter(x=mobility_df[mobility_df.columns[0]],
+                            y=mobility_df[mobility_df.columns[5]],
+                            line_color="#800080",
+                            name="Travail",
+                            ))
+mobility_fig.add_trace(go.Scatter(x=mobility_df[mobility_df.columns[0]],
+                            y=mobility_df[mobility_df.columns[6]],
+                            line_color=	"#008080",
+                            name="Residence",
+                            ))
+mobility_fig.update_layout(title='Google data mobility reporting the average number of daily movements to public places',
+           xaxis_title='Date',
+           yaxis_title='Average number of movement',
+           width=50)
 
 
 
@@ -388,15 +457,15 @@ app.layout = html.Div(
                         html.Div([
                             html.Div([
                                 html.H2('Confirmed Cases'),
-                                html.H2(267077),
+                                html.H2(corona_virus_df['cas'].max()),
                             ],style=dict(float='left', width='40%')),
                             html.Div([
                                 html.H2('Recovered'),
-                                html.H2(86177),
+                                html.H2(corona_virus_df['guerisons'].max()),
                             ],style=dict(float='left', width='25%')),
                             html.Div([
                                 html.H2('Death'),
-                                html.H2(30596),
+                                html.H2(corona_virus_df['deces'].max()),
                             ],style=dict(float='right', width='25%'))
                         ], style=dict(width=850, float='right', marginTop=50))]),
                 dcc.Tab(label='SIR Analysis',
@@ -431,7 +500,7 @@ app.layout = html.Div(
                         ]),
                         dbc.Row([]),
 
-                        html.Div(id='sir_vis')
+                        html.Div(id='sir_vis', style=dict(width=1000))
                         ]),
                 dcc.Tab(label='Geo Prevalence data',
                         value='tab-4-example',
@@ -466,11 +535,16 @@ app.layout = html.Div(
                                 style={'marginLeft':10, 'width':'200px'}),
                             html.Div(id='preval_mapping_output',style=dict(width=850, float='left', marginTop=50)),
                             html.Div(id='preval_description',style=dict(width=850, float='right', marginTop=50))])]),
-                dcc.Tab(label = "Evaluation",
+                dcc.Tab(label = "Relationship between datasets[Sante publique France and Google Mobility]",
                         value='evaluation-tab',
                         children=[
                             html.Div([
-                                dcc.Graph(figure=eval_fig)])])])]
+                                dcc.Graph(figure=eval_fig,
+                                        #style=dict(width=2000)
+                                        ),
+                                dcc.Graph(figure=mobility_fig,
+                                        #style=dict(width=2000)
+                                        )])])])]
 )
 
 # Provide more information about the prevalence
@@ -803,7 +877,7 @@ def preval_handler(dropdown_val, radio_val):
                         fig = go.Figure(data=data, layout=layout)
                         map = dcc.Graph(figure=fig)
     elif radio_val == preval_labels[1]:
-        if dropdown_val == preval_drop_labels[1]:
+        if dropdown_val == preval_drop_labels[0]:
             # create traces using a list comprehension:
             data = [go.Bar(
                 x = preval_dfs[1][0]['region'],
@@ -1900,6 +1974,7 @@ def preval_handler(dropdown_val, radio_val):
 
     return map
 
+
 @app.callback(
     Output(component_id='sir_vis', component_property='children'),
     [Input(component_id='run_sir',component_property='n_clicks')],
@@ -1928,7 +2003,7 @@ def sir_radio_handler(clicks, reprod_rate,sir_duration,radio):
                                         line_color='rgb(231,107,243)',
                                         name="Recovery",
                                         ))
-            sir_fig.update_layout(title='Proportion of S.I.R during the Corona Virus\n period modeled using SIR with Beta={} and Gamma={}'.format(beta,gamma),
+            sir_fig.update_layout(title='Proportion of Susceptible(S), Infectious(I) and Recovery(R) during the Corona Virus\n period modeled using SIR with Beta={} and Gamma={}'.format(beta,gamma),
                        xaxis_title='Number of days (Period of study)',
                        yaxis_title='Number of people')
             return dcc.Graph(figure=sir_fig)
