@@ -11,3 +11,6 @@
 * `requirements.txt`: Packages required to run the dashboard.
 * `Ulrich TCHUENKAM_ Covid Project (2).pdf`: Project report. 
 
+# Host project
+* The instructions on how to host the application are available [here](https://dash.plotly.com/deployment) on heroku 
+
