@@ -5,7 +5,7 @@ import pandas as pd
 import glob
 import os
 
-PREVAL_BASE = './data/prevalence/'
+PREVAL_BASE = '/home/ulrich/Documents/master2/projects/projet_covid/data/prevalence/'
 PREVAL_FOLDERS = listdirs(PREVAL_BASE)
 
 def listdirs(path):
